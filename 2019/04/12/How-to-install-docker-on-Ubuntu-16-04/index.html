@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>How to install docker on Ubuntu 16.04 | Note for study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Install using the repository123456789101112131415$ sudo apt-get update$ sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    gnupg-agent \    software-properties-common$ c">
+<meta name="keywords" content="Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to install docker on Ubuntu 16.04">
+<meta property="og:url" content="https://insert0003.github.io/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/index.html">
+<meta property="og:site_name" content="Note for study">
+<meta property="og:description" content="Install using the repository123456789101112131415$ sudo apt-get update$ sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    gnupg-agent \    software-properties-common$ c">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-12T01:16:16.224Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to install docker on Ubuntu 16.04">
+<meta name="twitter:description" content="Install using the repository123456789101112131415$ sudo apt-get update$ sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    gnupg-agent \    software-properties-common$ c">
+  
+    <link rel="alternate" href="/atom.xml" title="Note for study" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Note for study</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://insert0003.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-How-to-install-docker-on-Ubuntu-16-04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/" class="article-date">
+  <time datetime="2019-04-12T01:04:50.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How to install docker on Ubuntu 16.04
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Install-using-the-repository"><a href="#Install-using-the-repository" class="headerlink" title="Install using the repository"></a>Install using the repository</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg-agent \</span><br><span class="line">    software-properties-common</span><br><span class="line">$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line">$ sudo apt-key fingerprint 0EBFCD88</span><br><span class="line">$ sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+<h2 id="Install-specific-version"><a href="#Install-specific-version" class="headerlink" title="Install specific version"></a>Install specific version</h2><p>List the available versions in the repo, then select and install.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-cache madison docker-ce</span><br><span class="line">$ sudo apt-get install docker-ce=&lt;VERSION_STRING&gt; docker-ce-cli=&lt;VERSION_STRING&gt; containerd.io</span><br></pre></td></tr></table></figure>
+<h2 id="Test-with-hello-world"><a href="#Test-with-hello-world" class="headerlink" title="Test with hello-world"></a>Test with hello-world</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+<h2 id="Use-docker-without-root"><a href="#Use-docker-without-root" class="headerlink" title="Use docker without root"></a>Use docker without root</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group | grep docker <span class="comment"># 查找 docker 组，确认其是否存在</span></span><br><span class="line">groups <span class="comment"># 列出自己的用户组，确认自己在不在 docker 组中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果 docker 组不存在，则添加之：</span></span><br><span class="line">sudo groupadd docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将当前用户添加到 docker 组</span></span><br><span class="line">sudo gpasswd -a <span class="variable">$&#123;USER&#125;</span> docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">sudo service docker restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换一下用户组（刷新缓存）</span></span><br><span class="line">newgrp - docker;</span><br><span class="line">newgrp - `groups <span class="variable">$&#123;USER&#125;</span> | cut -d<span class="string">' '</span> -f1`; <span class="comment"># TODO：必须逐行执行，不知道为什么，批量执行时第二条不会生效</span></span><br><span class="line"><span class="comment"># 或者，注销并重新登录</span></span><br><span class="line">pkill X</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/" data-id="cjuhw290z00015icpms99f3tl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/12/Use-ubuntu-in-docker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Use ubuntu in docker
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/09/How-to-install-node-on-Ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to install node on Ubuntu</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/Ubuntu-usage-note/">Ubuntu usage note</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/bitbake常用命令/">bitbake常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Add-swap-to-Linux/">Linux添加swap交换分区(虚拟内存)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Use-ubuntu-in-docker/">Use ubuntu in docker</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/">How to install docker on Ubuntu 16.04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wenlong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

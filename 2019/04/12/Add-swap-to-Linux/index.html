@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Linux添加swap交换分区(虚拟内存) | Note for study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="确认是否有swap可以执行free -m 命令查看，如果有swap一行且total项下不为零的话就是存在swap，就不适合再进行添加swap。 添加swap以下以添加2GB SWAP为例。（SWAP一般设置为内存的2倍，并非完全以此为标准，只适合4GB以下内存，count后面的数为要设置的swap大小xxMB） 12345$ dd if=/dev/zero of=/var/swapfile bs=">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux添加swap交换分区(虚拟内存)">
+<meta property="og:url" content="https://insert0003.github.io/2019/04/12/Add-swap-to-Linux/index.html">
+<meta property="og:site_name" content="Note for study">
+<meta property="og:description" content="确认是否有swap可以执行free -m 命令查看，如果有swap一行且total项下不为零的话就是存在swap，就不适合再进行添加swap。 添加swap以下以添加2GB SWAP为例。（SWAP一般设置为内存的2倍，并非完全以此为标准，只适合4GB以下内存，count后面的数为要设置的swap大小xxMB） 12345$ dd if=/dev/zero of=/var/swapfile bs=">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-12T09:27:11.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux添加swap交换分区(虚拟内存)">
+<meta name="twitter:description" content="确认是否有swap可以执行free -m 命令查看，如果有swap一行且total项下不为零的话就是存在swap，就不适合再进行添加swap。 添加swap以下以添加2GB SWAP为例。（SWAP一般设置为内存的2倍，并非完全以此为标准，只适合4GB以下内存，count后面的数为要设置的swap大小xxMB） 12345$ dd if=/dev/zero of=/var/swapfile bs=">
+  
+    <link rel="alternate" href="/atom.xml" title="Note for study" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Note for study</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://insert0003.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Add-swap-to-Linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/12/Add-swap-to-Linux/" class="article-date">
+  <time datetime="2019-04-12T08:47:48.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux添加swap交换分区(虚拟内存)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="确认是否有swap"><a href="#确认是否有swap" class="headerlink" title="确认是否有swap"></a>确认是否有swap</h2><p>可以执行free -m 命令查看，如果有swap一行且total项下不为零的话就是存在swap，就不适合再进行添加swap。</p>
+<h2 id="添加swap"><a href="#添加swap" class="headerlink" title="添加swap"></a>添加swap</h2><p>以下以添加2GB SWAP为例。<br>（SWAP一般设置为内存的2倍，并非完全以此为标准，只适合4GB以下内存，count后面的数为要设置的swap大小xxMB）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ dd <span class="keyword">if</span>=/dev/zero of=/var/swapfile bs=1M count=2048 <span class="comment"># 生成文件块</span></span><br><span class="line">$ /sbin/mkswap /var/swapfile</span><br><span class="line">$ /sbin/swapon /var/swapfile <span class="comment"># 激活swap文件</span></span><br><span class="line">$ /sbin/swapon -s <span class="comment"># 查看一下swap是否正确：</span></span><br><span class="line">$ chmod 0600 /var/swapfile <span class="comment"># 修改文件权限</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加开机自动挂载设置"><a href="#添加开机自动挂载设置" class="headerlink" title="添加开机自动挂载设置"></a>添加开机自动挂载设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vi /etc/fstab</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"/var/swapfile swap swap defaults 0 0"</span> &gt;&gt;/etc/fstab</span><br></pre></td></tr></table></figure>
+<h2 id="SWAP删除方法："><a href="#SWAP删除方法：" class="headerlink" title="SWAP删除方法："></a>SWAP删除方法：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ /sbin/swapoff /var/swapfile <span class="comment"># 无效swap</span></span><br><span class="line">$ rm -f /var/swapfile <span class="comment"># 删掉添加的自动挂载swap的设置</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除开机自动挂载设置"><a href="#删除开机自动挂载设置" class="headerlink" title="删除开机自动挂载设置"></a>删除开机自动挂载设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/fstab</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/12/Add-swap-to-Linux/" data-id="cjuhw290s00005icpwnq6p6zy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/bitbake常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          bitbake常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/12/Use-ubuntu-in-docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Use ubuntu in docker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/Ubuntu-usage-note/">Ubuntu usage note</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/bitbake常用命令/">bitbake常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Add-swap-to-Linux/">Linux添加swap交换分区(虚拟内存)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Use-ubuntu-in-docker/">Use ubuntu in docker</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/">How to install docker on Ubuntu 16.04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wenlong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

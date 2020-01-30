@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>bitbake常用命令 | Note for study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分享一些yocto常用命令 http://wiki.kaeilos.com/index.php/Bitbake_options bitbake  Build package (including creating package)1$ bitbake -c cleansstate &amp;lt;pkgname&amp;gt; Cleans up all the tasks state with regard t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bitbake常用命令">
+<meta property="og:url" content="https://insert0003.github.io/2019/04/15/bitbake常用命令/index.html">
+<meta property="og:site_name" content="Note for study">
+<meta property="og:description" content="分享一些yocto常用命令 http://wiki.kaeilos.com/index.php/Bitbake_options bitbake  Build package (including creating package)1$ bitbake -c cleansstate &amp;lt;pkgname&amp;gt; Cleans up all the tasks state with regard t">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T02:38:32.298Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bitbake常用命令">
+<meta name="twitter:description" content="分享一些yocto常用命令 http://wiki.kaeilos.com/index.php/Bitbake_options bitbake  Build package (including creating package)1$ bitbake -c cleansstate &amp;lt;pkgname&amp;gt; Cleans up all the tasks state with regard t">
+  
+    <link rel="alternate" href="/atom.xml" title="Note for study" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Note for study</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://insert0003.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-bitbake常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/bitbake常用命令/" class="article-date">
+  <time datetime="2019-04-15T02:32:26.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      bitbake常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分享一些yocto常用命令</p>
+<p><a href="http://wiki.kaeilos.com/index.php/Bitbake_options" target="_blank" rel="noopener">http://wiki.kaeilos.com/index.php/Bitbake_options</a></p>
+<p>bitbake <pkgname></pkgname></p>
+<p>Build package (including creating package)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -c cleansstate &lt;pkgname&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Cleans up all the tasks state with regard to the given <pkgname> This =ption is frequently used during the development of new recipes<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;pkgname&gt;</span><br></pre></td></tr></table></figure></pkgname></p>
+<p>Displays the internal state of variables used by BitBake =E6��示bb有哪些任务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c listtasks</span><br></pre></td></tr></table></figure></p>
+<p>Tasks available for a package/recipe<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c rebuild -f</span><br></pre></td></tr></table></figure></p>
+<p>Clean and build again a package<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c fetch -f 强制下载代码</span><br></pre></td></tr></table></figure></p>
+<p>Download again the source program 交互模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c devshell</span><br></pre></td></tr></table></figure></p>
+<p>Expand a gnome xterm ready to raise commands<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c clean/compile 编译或者清理单个包</span><br></pre></td></tr></table></figure></p>
+<p>Clean or compile package.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake package-index</span><br></pre></td></tr></table></figure></p>
+<p>Make package index files for feeds<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;target_image&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Build image contains task-base packages<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;target_image&gt; -c buildall -f</span><br></pre></td></tr></table></figure></p>
+<p>Build pending packages for \code{target_image}<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;target_image&gt; -c rootfs -f</span><br></pre></td></tr></table></figure></p>
+<p>Populate rootfs again for \code{target_image}<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;pkgname&gt; | grep ^S=</span><br></pre></td></tr></table></figure></p>
+<p>Finds the source code. 输出包代码的位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;target&gt; | grep ^WORKDIR=</span><br></pre></td></tr></table></figure></p>
+<p>Finds bitbakes’s working directory.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;image-target&gt; | grep ^IMAGE_FSTYPES=</span><br></pre></td></tr></table></figure></p>
+<p>Finds the image types being build<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -h</span><br></pre></td></tr></table></figure></p>
+<p>Prints out the following help page</p>
+<p>Show package dependencies<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$bitbake</span> -g &lt;pkg&gt; &amp;&amp; cat pn-depends.dot | grep -v -e <span class="string">'-native'</span> | grep -v =igraph | grep -v -e <span class="string">'-image'</span> | awk <span class="string">'&#123;print $1&#125;'</span> | sort | uniq</span><br></pre></td></tr></table></figure></p>
+<p>bitbake-layers</p>
+<p>usage: bitbake-layers <command> [arguments]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Available commands:</span><br><span class="line"> <span class="built_in">help</span></span><br><span class="line">   display general <span class="built_in">help</span> or <span class="built_in">help</span> on a specified <span class="built_in">command</span></span><br><span class="line"> show-recipes =E6��看所有的recipes名字</span><br><span class="line">   list available recipes, showing the layer they are provided by</span><br><span class="line"> show-cross-depends</span><br><span class="line">   figure out the dependency between recipes that crosses a layer =oundary.</span><br><span class="line"> show-appends</span><br><span class="line">   list bbappend files and recipe files they apply to</span><br><span class="line"> flatten</span><br><span class="line">   flattens layer configuration into a separate output directory.</span><br><span class="line"> show-layers</span><br><span class="line">   show current configured layers</span><br><span class="line"> show-overlayed</span><br><span class="line">   list overlayed recipes (<span class="built_in">where</span> the same recipe exists <span class="keyword">in</span> another =ayer)</span><br><span class="line"></span><br><span class="line">bitbake-layers show-layers 察看层</span><br><span class="line"></span><br><span class="line">bitbake-layers show-overlayed</span><br><span class="line"></span><br><span class="line">bitbake agl-demo-platform-crosssdk 编译SDK</span><br><span class="line"></span><br><span class="line">bitbake virtual/kernel -c menuconfig  图形化配置内核</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/15/bitbake常用命令/" data-id="cjuhw291800065icpov3q3eqp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/Ubuntu-usage-note/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu usage note
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/12/Add-swap-to-Linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux添加swap交换分区(虚拟内存)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/Ubuntu-usage-note/">Ubuntu usage note</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/bitbake常用命令/">bitbake常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Add-swap-to-Linux/">Linux添加swap交换分区(虚拟内存)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Use-ubuntu-in-docker/">Use ubuntu in docker</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/">How to install docker on Ubuntu 16.04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wenlong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

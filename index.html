@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Note for study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Note for study">
+<meta property="og:url" content="https://insert0003.github.io/index.html">
+<meta property="og:site_name" content="Note for study">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Note for study">
+  
+    <link rel="alternate" href="/atom.xml" title="Note for study" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Note for study</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://insert0003.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Ubuntu-usage-note" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/Ubuntu-usage-note/" class="article-date">
+  <time datetime="2019-04-15T02:40:32.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/Ubuntu-usage-note/">Ubuntu usage note</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装Vim插件"><a href="#安装Vim插件" class="headerlink" title="安装Vim插件"></a>安装Vim插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.github.com/ma6174/vim/master/setup.sh | sh</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/15/Ubuntu-usage-note/" data-id="cjuhw291500045icpj31bvkyg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bitbake常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/bitbake常用命令/" class="article-date">
+  <time datetime="2019-04-15T02:32:26.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/bitbake常用命令/">bitbake常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分享一些yocto常用命令</p>
+<p><a href="http://wiki.kaeilos.com/index.php/Bitbake_options" target="_blank" rel="noopener">http://wiki.kaeilos.com/index.php/Bitbake_options</a></p>
+<p>bitbake <pkgname></pkgname></p>
+<p>Build package (including creating package)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -c cleansstate &lt;pkgname&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Cleans up all the tasks state with regard to the given <pkgname> This =ption is frequently used during the development of new recipes<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;pkgname&gt;</span><br></pre></td></tr></table></figure></pkgname></p>
+<p>Displays the internal state of variables used by BitBake =E6��示bb有哪些任务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c listtasks</span><br></pre></td></tr></table></figure></p>
+<p>Tasks available for a package/recipe<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c rebuild -f</span><br></pre></td></tr></table></figure></p>
+<p>Clean and build again a package<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c fetch -f 强制下载代码</span><br></pre></td></tr></table></figure></p>
+<p>Download again the source program 交互模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c devshell</span><br></pre></td></tr></table></figure></p>
+<p>Expand a gnome xterm ready to raise commands<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;pkgname&gt; -c clean/compile 编译或者清理单个包</span><br></pre></td></tr></table></figure></p>
+<p>Clean or compile package.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake package-index</span><br></pre></td></tr></table></figure></p>
+<p>Make package index files for feeds<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;target_image&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Build image contains task-base packages<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;target_image&gt; -c buildall -f</span><br></pre></td></tr></table></figure></p>
+<p>Build pending packages for \code{target_image}<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake &lt;target_image&gt; -c rootfs -f</span><br></pre></td></tr></table></figure></p>
+<p>Populate rootfs again for \code{target_image}<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;pkgname&gt; | grep ^S=</span><br></pre></td></tr></table></figure></p>
+<p>Finds the source code. 输出包代码的位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;target&gt; | grep ^WORKDIR=</span><br></pre></td></tr></table></figure></p>
+<p>Finds bitbakes’s working directory.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -e &lt;image-target&gt; | grep ^IMAGE_FSTYPES=</span><br></pre></td></tr></table></figure></p>
+<p>Finds the image types being build<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bitbake -h</span><br></pre></td></tr></table></figure></p>
+<p>Prints out the following help page</p>
+<p>Show package dependencies<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$bitbake</span> -g &lt;pkg&gt; &amp;&amp; cat pn-depends.dot | grep -v -e <span class="string">'-native'</span> | grep -v =igraph | grep -v -e <span class="string">'-image'</span> | awk <span class="string">'&#123;print $1&#125;'</span> | sort | uniq</span><br></pre></td></tr></table></figure></p>
+<p>bitbake-layers</p>
+<p>usage: bitbake-layers <command> [arguments]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Available commands:</span><br><span class="line"> <span class="built_in">help</span></span><br><span class="line">   display general <span class="built_in">help</span> or <span class="built_in">help</span> on a specified <span class="built_in">command</span></span><br><span class="line"> show-recipes =E6��看所有的recipes名字</span><br><span class="line">   list available recipes, showing the layer they are provided by</span><br><span class="line"> show-cross-depends</span><br><span class="line">   figure out the dependency between recipes that crosses a layer =oundary.</span><br><span class="line"> show-appends</span><br><span class="line">   list bbappend files and recipe files they apply to</span><br><span class="line"> flatten</span><br><span class="line">   flattens layer configuration into a separate output directory.</span><br><span class="line"> show-layers</span><br><span class="line">   show current configured layers</span><br><span class="line"> show-overlayed</span><br><span class="line">   list overlayed recipes (<span class="built_in">where</span> the same recipe exists <span class="keyword">in</span> another =ayer)</span><br><span class="line"></span><br><span class="line">bitbake-layers show-layers 察看层</span><br><span class="line"></span><br><span class="line">bitbake-layers show-overlayed</span><br><span class="line"></span><br><span class="line">bitbake agl-demo-platform-crosssdk 编译SDK</span><br><span class="line"></span><br><span class="line">bitbake virtual/kernel -c menuconfig  图形化配置内核</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/15/bitbake常用命令/" data-id="cjuhw291800065icpov3q3eqp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Add-swap-to-Linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/12/Add-swap-to-Linux/" class="article-date">
+  <time datetime="2019-04-12T08:47:48.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/12/Add-swap-to-Linux/">Linux添加swap交换分区(虚拟内存)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="确认是否有swap"><a href="#确认是否有swap" class="headerlink" title="确认是否有swap"></a>确认是否有swap</h2><p>可以执行free -m 命令查看，如果有swap一行且total项下不为零的话就是存在swap，就不适合再进行添加swap。</p>
+<h2 id="添加swap"><a href="#添加swap" class="headerlink" title="添加swap"></a>添加swap</h2><p>以下以添加2GB SWAP为例。<br>（SWAP一般设置为内存的2倍，并非完全以此为标准，只适合4GB以下内存，count后面的数为要设置的swap大小xxMB）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ dd <span class="keyword">if</span>=/dev/zero of=/var/swapfile bs=1M count=2048 <span class="comment"># 生成文件块</span></span><br><span class="line">$ /sbin/mkswap /var/swapfile</span><br><span class="line">$ /sbin/swapon /var/swapfile <span class="comment"># 激活swap文件</span></span><br><span class="line">$ /sbin/swapon -s <span class="comment"># 查看一下swap是否正确：</span></span><br><span class="line">$ chmod 0600 /var/swapfile <span class="comment"># 修改文件权限</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加开机自动挂载设置"><a href="#添加开机自动挂载设置" class="headerlink" title="添加开机自动挂载设置"></a>添加开机自动挂载设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vi /etc/fstab</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"/var/swapfile swap swap defaults 0 0"</span> &gt;&gt;/etc/fstab</span><br></pre></td></tr></table></figure>
+<h2 id="SWAP删除方法："><a href="#SWAP删除方法：" class="headerlink" title="SWAP删除方法："></a>SWAP删除方法：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ /sbin/swapoff /var/swapfile <span class="comment"># 无效swap</span></span><br><span class="line">$ rm -f /var/swapfile <span class="comment"># 删掉添加的自动挂载swap的设置</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除开机自动挂载设置"><a href="#删除开机自动挂载设置" class="headerlink" title="删除开机自动挂载设置"></a>删除开机自动挂载设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/fstab</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/12/Add-swap-to-Linux/" data-id="cjuhw290s00005icpwnq6p6zy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Use-ubuntu-in-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/12/Use-ubuntu-in-docker/" class="article-date">
+  <time datetime="2019-04-12T01:39:28.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/12/Use-ubuntu-in-docker/">Use ubuntu in docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Search-Docker-images"><a href="#Search-Docker-images" class="headerlink" title="Search Docker images"></a>Search Docker images</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker search ubuntu</span><br></pre></td></tr></table></figure>
+<h2 id="Download-Ubuntu-docker-images"><a href="#Download-Ubuntu-docker-images" class="headerlink" title="Download Ubuntu docker images"></a>Download Ubuntu docker images</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name Ubuntu -dt ubuntu</span><br></pre></td></tr></table></figure>
+<h2 id="Run-bash-in-Ubuntu-docker"><a href="#Run-bash-in-Ubuntu-docker" class="headerlink" title="Run bash in Ubuntu docker"></a>Run bash in Ubuntu docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="built_in">exec</span> -it Ubuntu bash</span><br></pre></td></tr></table></figure>
+<h2 id="Leave-Ubuntu-docker"><a href="#Leave-Ubuntu-docker" class="headerlink" title="Leave Ubuntu docker"></a>Leave Ubuntu docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h2 id="Start-Docker"><a href="#Start-Docker" class="headerlink" title="Start Docker"></a>Start Docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker stop Ubuntu</span><br></pre></td></tr></table></figure>
+<h2 id="Stop-Docker"><a href="#Stop-Docker" class="headerlink" title="Stop Docker"></a>Stop Docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker stop Ubuntu</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/12/Use-ubuntu-in-docker/" data-id="cjuhw291700055icpjl6o10t9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-How-to-install-docker-on-Ubuntu-16-04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/" class="article-date">
+  <time datetime="2019-04-12T01:04:50.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/">How to install docker on Ubuntu 16.04</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Install-using-the-repository"><a href="#Install-using-the-repository" class="headerlink" title="Install using the repository"></a>Install using the repository</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg-agent \</span><br><span class="line">    software-properties-common</span><br><span class="line">$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line">$ sudo apt-key fingerprint 0EBFCD88</span><br><span class="line">$ sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+<h2 id="Install-specific-version"><a href="#Install-specific-version" class="headerlink" title="Install specific version"></a>Install specific version</h2><p>List the available versions in the repo, then select and install.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-cache madison docker-ce</span><br><span class="line">$ sudo apt-get install docker-ce=&lt;VERSION_STRING&gt; docker-ce-cli=&lt;VERSION_STRING&gt; containerd.io</span><br></pre></td></tr></table></figure>
+<h2 id="Test-with-hello-world"><a href="#Test-with-hello-world" class="headerlink" title="Test with hello-world"></a>Test with hello-world</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+<h2 id="Use-docker-without-root"><a href="#Use-docker-without-root" class="headerlink" title="Use docker without root"></a>Use docker without root</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group | grep docker <span class="comment"># 查找 docker 组，确认其是否存在</span></span><br><span class="line">groups <span class="comment"># 列出自己的用户组，确认自己在不在 docker 组中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果 docker 组不存在，则添加之：</span></span><br><span class="line">sudo groupadd docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将当前用户添加到 docker 组</span></span><br><span class="line">sudo gpasswd -a <span class="variable">$&#123;USER&#125;</span> docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">sudo service docker restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换一下用户组（刷新缓存）</span></span><br><span class="line">newgrp - docker;</span><br><span class="line">newgrp - `groups <span class="variable">$&#123;USER&#125;</span> | cut -d<span class="string">' '</span> -f1`; <span class="comment"># TODO：必须逐行执行，不知道为什么，批量执行时第二条不会生效</span></span><br><span class="line"><span class="comment"># 或者，注销并重新登录</span></span><br><span class="line">pkill X</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/" data-id="cjuhw290z00015icpms99f3tl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-How-to-install-node-on-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/09/How-to-install-node-on-Ubuntu/" class="article-date">
+  <time datetime="2019-04-09T06:23:18.000Z" itemprop="datePublished">2019-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/09/How-to-install-node-on-Ubuntu/">How to install node on Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Node-js-v11-x"><a href="#Node-js-v11-x" class="headerlink" title="Node.js v11.x:"></a>Node.js v11.x:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -</span><br><span class="line">$ sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<h2 id="Node-js-v10-x"><a href="#Node-js-v10-x" class="headerlink" title="Node.js v10.x:"></a>Node.js v10.x:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -</span><br><span class="line">$ sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/09/How-to-install-node-on-Ubuntu/" data-id="cjuhw291100025icpvmg5642k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/09/hello-world/" class="article-date">
+  <time datetime="2019-04-09T05:46:44.998Z" itemprop="datePublished">2019-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/09/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://insert0003.github.io/2019/04/09/hello-world/" data-id="cjuhw291b00095icp9dlw6rtx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/Ubuntu-usage-note/">Ubuntu usage note</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/bitbake常用命令/">bitbake常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Add-swap-to-Linux/">Linux添加swap交换分区(虚拟内存)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/Use-ubuntu-in-docker/">Use ubuntu in docker</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/How-to-install-docker-on-Ubuntu-16-04/">How to install docker on Ubuntu 16.04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wenlong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
